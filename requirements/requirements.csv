@@ -1,0 +1,10 @@
+﻿Identifier;Competency Question / Fact
+QUAL-1;An element can have a defect
+QUAL2;A defect has a type of defect and a severity indicator
+QUAL-3;A defect can be detected, confirmed or not confirmed
+QUAL-4;An image in taken at a time and location
+QUAL-5;When an image has been processed, its metadata includes the type of processing
+QUAL-6;An element can have geometric quality information
+QUAL-7;A piece of geometric quality information is related to a rule and includes a value (passed or not passed) and a specification of the problem
+QUAL-8;Tags In a project have an estimated accuracy
+QUAL-9;A zone and an element can be related to a safety information
