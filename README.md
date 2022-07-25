@@ -1,6 +1,6 @@
 # COGITO Quality ontology
 
-This repository contains the code and documentation generated for the COGITO Quqlity ontology.
+This repository contains the code and documentation generated for the COGITO Quality ontology.
 
 ## Current version of the ontology model
 
