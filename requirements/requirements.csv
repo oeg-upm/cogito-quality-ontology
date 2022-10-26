@@ -1,6 +1,6 @@
 ﻿Identifier;Competency Question / Fact
-QUAL-1;A project can have quality information (especially point cloud and image jobs)
-QUAL2;An element can have quality information (especially as-built point clouds and meshes)
+QUAL-1;A project can have information resources (especially point cloud and image jobs)
+QUAL-2;An element can have information resources (especially as-built point clouds and meshes)
 QUAL-3;An element can have results about its quality
 QUAL-4;Quality results include defects and geometric quality information
 QUAL-5;A quality result can be detected, confirmed or rejected (status)
