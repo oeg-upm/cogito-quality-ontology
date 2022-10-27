@@ -18,7 +18,7 @@
                                              <http://purl.org/dc/elements/1.1/description> "The COGITO Quality ontology aims at modelling the construction quality domain." ;
                                              <http://purl.org/dc/elements/1.1/title> "Quality Ontology" ;
                                              dcterms:license <http://purl.org/NET/rdflicense/cc-by4.0> ;
-                                             owl:versionInfo "0.8.0" .
+                                             owl:versionInfo "0.9.0" .
 
 #################################################################
 #    Annotation properties
@@ -302,35 +302,36 @@ qual:GeometricQualityInformation rdf:type owl:Class ;
 
 ###  https://cogito.iot.linkeddata.es/quality#Image
 qual:Image rdf:type owl:Class ;
+           rdfs:subClassOf qual:InformationResource ;
            rdfs:comment "A picture of an entity" ;
            rdfs:label "Image" .
 
 
 ###  https://cogito.iot.linkeddata.es/quality#ImageJob
 qual:ImageJob rdf:type owl:Class ;
-              rdfs:subClassOf qual:QualityInformation ;
+              rdfs:subClassOf qual:InformationResource ;
               rdfs:comment "Data regarding an image and the results of processing it" ;
               rdfs:label "Image Job" .
 
 
+###  https://cogito.iot.linkeddata.es/quality#InformationResource
+qual:InformationResource rdf:type owl:Class ;
+                         rdfs:comment "Data regarding  the quality of an entity (especially a facility:Project or facility:Element) and that may have associated files" ;
+                         rdfs:label "Quality Information" .
+
+
 ###  https://cogito.iot.linkeddata.es/quality#Mesh
 qual:Mesh rdf:type owl:Class ;
-          rdfs:subClassOf qual:QualityInformation ;
+          rdfs:subClassOf qual:InformationResource ;
           rdfs:comment "A collection of vertices, edges and faces that defines the shape of an object (especially a facility:Element)" ;
           rdfs:label "Mesh" .
 
 
 ###  https://cogito.iot.linkeddata.es/quality#PointCoud
 qual:PointCoud rdf:type owl:Class ;
-               rdfs:subClassOf qual:QualityInformation ;
+               rdfs:subClassOf qual:InformationResource ;
                rdfs:comment "A set of data points in space" ;
                rdfs:label "Point Cloud" .
-
-
-###  https://cogito.iot.linkeddata.es/quality#QualityInformation
-qual:QualityInformation rdf:type owl:Class ;
-                        rdfs:comment "Data regarding  the quality of an entity (especially a facility:Project or facility:Element)" ;
-                        rdfs:label "Quality Information" .
 
 
 ###  https://cogito.iot.linkeddata.es/quality#QualityResult
