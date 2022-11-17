@@ -18,7 +18,7 @@
                                              <http://purl.org/dc/elements/1.1/description> "The COGITO Quality ontology aims at modelling the construction quality domain." ;
                                              <http://purl.org/dc/elements/1.1/title> "Quality Ontology" ;
                                              dcterms:license <http://purl.org/NET/rdflicense/cc-by4.0> ;
-                                             owl:versionInfo "0.9.0" .
+                                             owl:versionInfo "0.10.0" .
 
 #################################################################
 #    Annotation properties
@@ -80,11 +80,11 @@ qual:isRelatedToElement rdf:type owl:ObjectProperty ;
                         rdfs:label "is related to element" .
 
 
-###  https://cogito.iot.linkeddata.es/quality#isRelatedToWorkOrder
-qual:isRelatedToWorkOrder rdf:type owl:ObjectProperty ;
-                          rdfs:range process:WorkOrder ;
-                          rdfs:comment "Property that relates an entity (especially qual:QuqlityInformation) to a process:WorkOrder" ;
-                          rdfs:label "is related to work order" .
+###  https://cogito.iot.linkeddata.es/quality#isRelatedToTask
+qual:isRelatedToTask rdf:type owl:ObjectProperty ;
+                     rdfs:range process:Task ;
+                     rdfs:comment "Property that relates an entity (especially qual:QuqlityInformation) to a process:Task" ;
+                     rdfs:label "is related to task" .
 
 
 ###  https://cogito.iot.linkeddata.es/quality#refelctsQualityResult
@@ -184,6 +184,12 @@ qual:originDocument rdf:type owl:DatatypeProperty ;
                     rdfs:label "origin document" .
 
 
+###  https://cogito.iot.linkeddata.es/quality#outcome
+qual:outcome rdf:type owl:DatatypeProperty ;
+             rdfs:comment "Property indicating if a result has been accepted or rejected" ;
+             rdfs:label "outcome" .
+
+
 ###  https://cogito.iot.linkeddata.es/quality#performedTimestamp
 qual:performedTimestamp rdf:type owl:DatatypeProperty ;
                         rdfs:comment "Property indicating the actual time" ;
@@ -228,7 +234,7 @@ qual:severity rdf:type owl:DatatypeProperty ;
 
 ###  https://cogito.iot.linkeddata.es/quality#status
 qual:status rdf:type owl:DatatypeProperty ;
-            rdfs:comment "Property indicating if a result has been reviewed, confirmed or rejected" ;
+            rdfs:comment "Property indicating if a result has been checked" ;
             rdfs:label "status" .
 
 
@@ -266,10 +272,10 @@ facility:Project rdf:type owl:Class ;
                  rdfs:label "Project" .
 
 
-###  https://cogito.iot.linkeddata.es/process#WorkOrder
-process:WorkOrder rdf:type owl:Class ;
-                  rdfs:comment "A command or instruction authorizing specific work, repairs, etc., to be done" ;
-                  rdfs:label "Work Order" .
+###  https://cogito.iot.linkeddata.es/process#Task
+process:Task rdf:type owl:Class ;
+             rdfs:comment "A piece of work, which is performed in a process:Process" ;
+             rdfs:label "Task" .
 
 
 ###  https://cogito.iot.linkeddata.es/quality#AsBuiltMesh
@@ -316,7 +322,7 @@ qual:ImageJob rdf:type owl:Class ;
 
 ###  https://cogito.iot.linkeddata.es/quality#InformationResource
 qual:InformationResource rdf:type owl:Class ;
-                         rdfs:comment "Data regarding  the quality of an entity (especially a facility:Project or facility:Element) and that may have associated files" ;
+                         rdfs:comment "Data regarding  the quality of an entity (especially a facility:Project or facility:Element) and that may have associated files in the platform" ;
                          rdfs:label "Quality Information" .
 
 
