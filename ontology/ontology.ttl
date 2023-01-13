@@ -51,6 +51,14 @@ dcterms:license rdf:type owl:AnnotationProperty .
                                                                   rdfs:label "is related to project" .
 
 
+###  https://cogito.iot.linkeddata.es/quality#hasInformationResource
+qual:hasInformationResource rdf:type owl:ObjectProperty ;
+                            owl:inverseOf qual:isRelatedToElement ;
+                            rdfs:range qual:InformationResource ;
+                            rdfs:comment "Property that relates an entity (especially a facility:Element) to a qual:InformationResource" ;
+                            rdfs:label "has information resource" .
+
+
 ###  https://cogito.iot.linkeddata.es/quality#hasProcessedImage
 qual:hasProcessedImage rdf:type owl:ObjectProperty ;
                        rdfs:range qual:Image ;
@@ -76,7 +84,7 @@ qual:hasResultImage rdf:type owl:ObjectProperty ;
 ###  https://cogito.iot.linkeddata.es/quality#isRelatedToElement
 qual:isRelatedToElement rdf:type owl:ObjectProperty ;
                         rdfs:range facility:Element ;
-                        rdfs:comment "Property that relates an entity (especially qual:QualityInformation) to a facility:Element" ;
+                        rdfs:comment "Property that relates an entity (especially qual:InformationResource) to a facility:Element" ;
                         rdfs:label "is related to element" .
 
 
