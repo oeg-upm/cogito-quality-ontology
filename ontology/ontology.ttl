@@ -18,7 +18,7 @@
                                              <http://purl.org/dc/elements/1.1/description> "The COGITO Quality ontology aims at modelling the construction quality domain." ;
                                              <http://purl.org/dc/elements/1.1/title> "Quality Ontology" ;
                                              dcterms:license <http://purl.org/NET/rdflicense/cc-by4.0> ;
-                                             owl:versionInfo "0.10.0" .
+                                             owl:versionInfo "0.12.0" .
 
 #################################################################
 #    Annotation properties
@@ -69,6 +69,7 @@ qual:hasProcessedImage rdf:type owl:ObjectProperty ;
 ###  https://cogito.iot.linkeddata.es/quality#hasRawImage
 qual:hasRawImage rdf:type owl:ObjectProperty ;
                  rdfs:subPropertyOf owl:topObjectProperty ;
+                 owl:inverseOf qual:isRelatedToJob ;
                  rdfs:range qual:RawImage ;
                  rdfs:comment "Property that relates an entity (especially qual:ImageJob to an original qual:Image" ;
                  rdfs:label "has raw image" .
@@ -88,6 +89,12 @@ qual:isRelatedToElement rdf:type owl:ObjectProperty ;
                         rdfs:label "is related to element" .
 
 
+###  https://cogito.iot.linkeddata.es/quality#isRelatedToJob
+qual:isRelatedToJob rdf:type owl:ObjectProperty ;
+                    rdfs:comment "Property that relates an entity (especially a qual:RawImage) to the qual:ImageJob that it is associated to" ;
+                    rdfs:label "is related to job" .
+
+
 ###  https://cogito.iot.linkeddata.es/quality#isRelatedToTask
 qual:isRelatedToTask rdf:type owl:ObjectProperty ;
                      rdfs:range process:Task ;
@@ -95,10 +102,33 @@ qual:isRelatedToTask rdf:type owl:ObjectProperty ;
                      rdfs:label "is related to task" .
 
 
-###  https://cogito.iot.linkeddata.es/quality#refelctsQualityResult
-qual:refelctsQualityResult rdf:type owl:ObjectProperty ;
-                           rdfs:comment "Property that relates an entity (especially qual:QuqlityInformation to a qual:QualityResult" ;
-                           rdfs:label "reflects quality result" .
+###  https://cogito.iot.linkeddata.es/quality#isTheResultToJob
+qual:isTheResultToJob rdf:type owl:ObjectProperty ;
+                      owl:inverseOf qual:producesVisualQualityInformation ;
+                      rdfs:comment "Property that relates an entity (especially a qual:VisualQualityInformation ) to the qual:ImageJob that has produced it" ;
+                      rdfs:label "is the result to job" .
+
+
+###  https://cogito.iot.linkeddata.es/quality#producesGeometricQualityInformation
+qual:producesGeometricQualityInformation rdf:type owl:ObjectProperty ;
+                                         rdfs:subPropertyOf qual:producesQualityInformation ;
+                                         rdfs:range qual:GeometricQualityInformation ;
+                                         rdfs:comment "Property that relates an entity (especially a qual:PointCloud) to the qual:GeometricQualityInformation it produces" ;
+                                         rdfs:label "produces geometric quality information" .
+
+
+###  https://cogito.iot.linkeddata.es/quality#producesQualityInformation
+qual:producesQualityInformation rdf:type owl:ObjectProperty ;
+                                rdfs:comment "Property that relates an entity (especially a qual:InformationResource) to the qual:QualityInformation it produces." ;
+                                rdfs:label "produces quality information" .
+
+
+###  https://cogito.iot.linkeddata.es/quality#producesVisualQualityInformation
+qual:producesVisualQualityInformation rdf:type owl:ObjectProperty ;
+                                      rdfs:subPropertyOf qual:producesQualityInformation ;
+                                      rdfs:range qual:VisualQualityInformation ;
+                                      rdfs:comment "Property that relates an entity (especially a qual:ImageJob) to the qual:VisualQualityInformation it produces" ;
+                                      rdfs:label "produces visual quality information" .
 
 
 ###  https://cogito.iot.linkeddata.es/quality#refersToElement
@@ -115,38 +145,25 @@ qual:refersToRule rdf:type owl:ObjectProperty ;
                   rdfs:label "refers to rule" .
 
 
-###  https://cogito.iot.linkeddata.es/quality#reflectsDefect
-qual:reflectsDefect rdf:type owl:ObjectProperty ;
-                    rdfs:subPropertyOf qual:refelctsQualityResult ;
-                    rdfs:range qual:Defect ;
-                    rdfs:comment "Property that relates an entity (especially qual:ImageJob) to a qual:Defect" ;
-                    rdfs:label "reflects defect" .
-
-
-###  https://cogito.iot.linkeddata.es/quality#reflectsGeometricQuality
-qual:reflectsGeometricQuality rdf:type owl:ObjectProperty ;
-                              rdfs:subPropertyOf qual:refelctsQualityResult ;
-                              rdfs:range qual:GeometricQualityInformation ;
-                              rdfs:comment "Property that relates an entity (especially qual:PointCloud) to a qual:GeometricQualityInformation" ;
-                              rdfs:label "reflects geometric quality" .
-
-
 #################################################################
 #    Data properties
 #################################################################
 
 ###  http://purl.org/dc/terms/description
 dcterms:description rdf:type owl:DatatypeProperty ;
+                    rdfs:isDefinedBy dcterms: ;
                     rdfs:label "description" .
 
 
 ###  http://purl.org/dc/terms/identifier
 dcterms:identifier rdf:type owl:DatatypeProperty ;
+                   rdfs:isDefinedBy dcterms: ;
                    rdfs:label "identifier" .
 
 
 ###  http://purl.org/dc/terms/title
 dcterms:title rdf:type owl:DatatypeProperty ;
+              rdfs:isDefinedBy dcterms: ;
               rdfs:label "title" .
 
 
@@ -200,7 +217,7 @@ qual:outcome rdf:type owl:DatatypeProperty ;
 
 ###  https://cogito.iot.linkeddata.es/quality#performedTimestamp
 qual:performedTimestamp rdf:type owl:DatatypeProperty ;
-                        rdfs:comment "Property indicating the actual time" ;
+                        rdfs:comment "Property indicating the actual time an entity has been performed" ;
                         rdfs:label "performed timestamp" .
 
 
@@ -264,6 +281,12 @@ qual:unit rdf:type owl:DatatypeProperty ;
           rdfs:label "unit" .
 
 
+###  https://cogito.iot.linkeddata.es/quality#uploadedTimestamp
+qual:uploadedTimestamp rdf:type owl:DatatypeProperty ;
+                       rdfs:comment "Property indicating the actual time an entity has been uploaded" ;
+                       rdfs:label "uploaded timestamp" .
+
+
 #################################################################
 #    Classes
 #################################################################
@@ -295,22 +318,15 @@ qual:AsBuiltMesh rdf:type owl:Class ;
 
 ###  https://cogito.iot.linkeddata.es/quality#AsBuiltPointCloud
 qual:AsBuiltPointCloud rdf:type owl:Class ;
-                       rdfs:subClassOf qual:PointCoud ;
+                       rdfs:subClassOf qual:PointCloud ;
                        rdfs:comment "A point cloud representing a built entity (especially a facility:Element)" ;
                        rdfs:label "As-built Point Cloud" .
 
 
-###  https://cogito.iot.linkeddata.es/quality#Defect
-qual:Defect rdf:type owl:Class ;
-            rdfs:subClassOf qual:QualityResult ;
-            rdfs:comment "A shortcoming, fault, or imperfection regarding a particular facility:Element." ;
-            rdfs:label "Defect" .
-
-
 ###  https://cogito.iot.linkeddata.es/quality#GeometricQualityInformation
 qual:GeometricQualityInformation rdf:type owl:Class ;
-                                 rdfs:subClassOf qual:QualityResult ;
-                                 rdfs:comment "Data informing a particular problem regarding a particular qual:Rule on a facility:Element" ;
+                                 rdfs:subClassOf qual:QualityInformation ;
+                                 rdfs:comment "Data informing a particular problem regarding a particular qual:Rule on a facility:Element, and found thanks to a process:GeometricQualityTask" ;
                                  rdfs:label "Geometric Quality Information" .
 
 
@@ -341,17 +357,17 @@ qual:Mesh rdf:type owl:Class ;
           rdfs:label "Mesh" .
 
 
-###  https://cogito.iot.linkeddata.es/quality#PointCoud
-qual:PointCoud rdf:type owl:Class ;
-               rdfs:subClassOf qual:InformationResource ;
-               rdfs:comment "A set of data points in space" ;
-               rdfs:label "Point Cloud" .
+###  https://cogito.iot.linkeddata.es/quality#PointCloud
+qual:PointCloud rdf:type owl:Class ;
+                rdfs:subClassOf qual:InformationResource ;
+                rdfs:comment "A set of data points in space" ;
+                rdfs:label "Point Cloud" .
 
 
-###  https://cogito.iot.linkeddata.es/quality#QualityResult
-qual:QualityResult rdf:type owl:Class ;
-                   rdfs:comment "The result of the analysis of  information (especially qual:QuantityInformation)" ;
-                   rdfs:label "Quality Result" .
+###  https://cogito.iot.linkeddata.es/quality#QualityInformation
+qual:QualityInformation rdf:type owl:Class ;
+                        rdfs:comment "The result of the analysis of  information (especially qual:QuantityInformation)" ;
+                        rdfs:label "Quality Information" .
 
 
 ###  https://cogito.iot.linkeddata.es/quality#RawImage
@@ -365,6 +381,13 @@ qual:RawImage rdf:type owl:Class ;
 qual:Rule rdf:type owl:Class ;
           rdfs:comment "Information regarding what an entity (especially a faciity:Element) must fulfil" ;
           rdfs:label "Rule" .
+
+
+###  https://cogito.iot.linkeddata.es/quality#VisualQualityInformation
+qual:VisualQualityInformation rdf:type owl:Class ;
+                              rdfs:subClassOf qual:QualityInformation ;
+                              rdfs:comment "A shortcoming, fault, or imperfection regarding a particular facility:Element, and found thanks to a process:VisualQualityTask" ;
+                              rdfs:label "Visual Quality Information" .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
