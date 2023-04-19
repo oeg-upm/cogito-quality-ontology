@@ -98,7 +98,7 @@ qual:isRelatedToJob rdf:type owl:ObjectProperty ;
 ###  https://cogito.iot.linkeddata.es/quality#isRelatedToTask
 qual:isRelatedToTask rdf:type owl:ObjectProperty ;
                      rdfs:range process:Task ;
-                     rdfs:comment "Property that relates an entity (especially qual:QuqlityInformation) to a process:Task" ;
+                     rdfs:comment "Property that relates an entity (especially qual:QuqlityInformation and qual:QualityInformation) to a process:Task" ;
                      rdfs:label "is related to task" .
 
 
