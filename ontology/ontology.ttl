@@ -138,6 +138,13 @@ qual:refersToElement rdf:type owl:ObjectProperty ;
                      rdfs:label "refers to element" .
 
 
+###  https://cogito.iot.linkeddata.es/quality#refersToGeometricQualityInf
+qual:refersToGeometricQualityInf rdf:type owl:ObjectProperty ;
+                                 rdfs:range qual:GeometricQualityInformation ;
+                                 rdfs:comment "Property that relates an entity (especially a facility:Element) to a qual:GeometricQualityInformation" ;
+                                 rdfs:label "refers to geometric quality information" .
+
+
 ###  https://cogito.iot.linkeddata.es/quality#refersToRule
 qual:refersToRule rdf:type owl:ObjectProperty ;
                   rdfs:range qual:Rule ;

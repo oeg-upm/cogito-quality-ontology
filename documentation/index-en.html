@@ -6,7 +6,7 @@
 
 
 <!-- SCHEMA.ORG METADATA -->
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://cogito.iot.linkeddata.es/quality#","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://cogito.iot.linkeddata.es/quality#","name":"Quality Ontology", "headline":"The COGITO Quality ontology aims at modelling the construction quality domain.", "datePublished":"Thu Mar 09 14:18:17 CET 2023", "version":"0.12.0", "license":"http://purl.org/NET/rdflicense/cc-by4.0", "author":[{"@type":"Person","name":"María Poveda Villalón"},{"@type":"Person","name":"Raúl García Castro"},{"@type":"Person","name":"Socorro  Bernardos Galindo"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://cogito.iot.linkeddata.es/quality#","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://cogito.iot.linkeddata.es/quality#","name":"Quality Ontology", "headline":"The COGITO Quality ontology aims at modelling the construction quality domain.", "datePublished":"Thu Dec 07 15:32:21 CET 2023", "version":"0.12.0", "license":"http://purl.org/NET/rdflicense/cc-by4.0", "author":[{"@type":"Person","name":"María Poveda Villalón"},{"@type":"Person","name":"Raúl García Castro"},{"@type":"Person","name":"Socorro  Bernardos Galindo"}]}</script>
 
 <script src="resources/jquery.js"></script> 
 <script src="resources/marked.min.js"></script> 
@@ -86,7 +86,7 @@ The COGITO Quality ontology aims at modelling the construction quality domain.</
 <!--INTRODUCTION SECTION-->
     <div id="introduction"><h2 id="intro" class="list">Introduction <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
 <span class="markdown">
-This document describes the results of the Quality ontology for the COGITO project.</span>
+This is a place holder text for the introduction. The introduction should briefly describe the ontology, its motivation, state of the art and goals.</span>
 <div id="namespacedeclarations">
 <h3 id="ns" class="list">Namespace declarations</h3>
 <div id="ns" align="center">
@@ -104,6 +104,7 @@ This document describes the results of the Quality ontology for the COGITO proje
 <tr><td><b>rdfs</b></td><td>&lt;http://www.w3.org/2000/01/rdf-schema&gt;</td></tr>
 <tr><td><b>facility</b></td><td>&lt;https://cogito.iot.linkeddata.es/def/facility&gt;</td></tr>
 <tr><td><b>dc</b></td><td>&lt;http://purl.org/dc/elements/1.1&gt;</td></tr>
+<tr><td><b>quality</b></td><td>&lt;https://cogito.iot.linkeddata.es/def/quality&gt;</td></tr>
 </tbody>
 </table>
 </div>
@@ -225,6 +226,10 @@ This ontology has the following classes and properties.</span>
    <li>
       <a href="#refersToElement"
          title="https://cogito.iot.linkeddata.es/quality#refersToElement">refers to element</a>
+   </li>
+   <li>
+      <a href="#refersToGeometricQualityInf"
+         title="https://cogito.iot.linkeddata.es/quality#refersToGeometricQualityInf">refers to geometric quality information</a>
    </li>
    <li>
       <a href="#refersToRule"
@@ -472,6 +477,8 @@ This section provides details for each class and property defined by Quality Ont
          <dd>
             <a href="#producesGeometricQualityInformation"
                title="https://cogito.iot.linkeddata.es/quality#producesGeometricQualityInformation">produces geometric quality information</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#refersToGeometricQualityInf"
+               title="https://cogito.iot.linkeddata.es/quality#refersToGeometricQualityInf">refers to geometric quality information</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
       </dl>
@@ -790,6 +797,10 @@ This section provides details for each class and property defined by Quality Ont
             title="https://cogito.iot.linkeddata.es/quality#refersToElement">refers to element</a>
       </li>
       <li>
+         <a href="#refersToGeometricQualityInf"
+            title="https://cogito.iot.linkeddata.es/quality#refersToGeometricQualityInf">refers to geometric quality information</a>
+      </li>
+      <li>
          <a href="#refersToRule"
             title="https://cogito.iot.linkeddata.es/quality#refersToRule">refers to rule</a>
       </li>
@@ -971,7 +982,7 @@ This section provides details for each class and property defined by Quality Ont
       <p>
          <strong>IRI:</strong> https://cogito.iot.linkeddata.es/quality#isRelatedToTask</p>
       <div class="comment">
-         <span class="markdown">Property that relates an entity (especially qual:QuqlityInformation) to a process:Task</span>
+         <span class="markdown">Property that relates an entity (especially qual:QuqlityInformation and qual:QualityInformation) to a process:Task</span>
       </div>
       <div class="description">
          <dl>
@@ -1103,6 +1114,27 @@ This section provides details for each class and property defined by Quality Ont
             <dd>
                <a href="#https://cogito.iot.linkeddata.es/def/facility#Element"
                   title="https://cogito.iot.linkeddata.es/def/facility#Element">Element</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="refersToGeometricQualityInf">
+      <h3>refers to geometric quality information<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://cogito.iot.linkeddata.es/quality#refersToGeometricQualityInf</p>
+      <div class="comment">
+         <span class="markdown">Property that relates an entity (especially a facility:Element) to a qual:GeometricQualityInformation</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has range</dt>
+            <dd>
+               <a href="#GeometricQualityInformation"
+                  title="https://cogito.iot.linkeddata.es/quality#GeometricQualityInformation">Geometric Quality Information</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
          </dl>
