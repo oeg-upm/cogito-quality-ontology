@@ -296,7 +296,7 @@
 
 
     <owl:DatatypeProperty rdf:about="https://cogito.iot.linkeddata.es/quality#confidenceLevel">
-        <rdfs:comment>Property indicating the level of confidence of a result (especially a qual:Defect)</rdfs:comment>
+        <rdfs:comment>Property indicating the level of confidence of a result (especially a qual:QualityInformation)</rdfs:comment>
         <rdfs:label>confidence level</rdfs:label>
     </owl:DatatypeProperty>
     
@@ -584,7 +584,7 @@
 
     <owl:Class rdf:about="https://cogito.iot.linkeddata.es/quality#InformationResource">
         <rdfs:comment>Data regarding  the quality of an entity (especially a facility:Project or facility:Element) and that may have associated files in the platform</rdfs:comment>
-        <rdfs:label>Quality Information</rdfs:label>
+        <rdfs:label>Information Resouce</rdfs:label>
     </owl:Class>
     
 

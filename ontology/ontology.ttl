@@ -182,7 +182,7 @@ qual:captureDevice rdf:type owl:DatatypeProperty ;
 
 ###  https://cogito.iot.linkeddata.es/quality#confidenceLevel
 qual:confidenceLevel rdf:type owl:DatatypeProperty ;
-                     rdfs:comment "Property indicating the level of confidence of a result (especially a qual:Defect)" ;
+                     rdfs:comment "Property indicating the level of confidence of a result (especially a qual:QualityInformation)" ;
                      rdfs:label "confidence level" .
 
 
@@ -354,7 +354,7 @@ qual:ImageJob rdf:type owl:Class ;
 ###  https://cogito.iot.linkeddata.es/quality#InformationResource
 qual:InformationResource rdf:type owl:Class ;
                          rdfs:comment "Data regarding  the quality of an entity (especially a facility:Project or facility:Element) and that may have associated files in the platform" ;
-                         rdfs:label "Quality Information" .
+                         rdfs:label "Information Resouce" .
 
 
 ###  https://cogito.iot.linkeddata.es/quality#Mesh

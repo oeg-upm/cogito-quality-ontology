@@ -160,7 +160,7 @@
 # 
 # https://cogito.iot.linkeddata.es/quality#confidenceLevel
 <https://cogito.iot.linkeddata.es/quality#confidenceLevel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://cogito.iot.linkeddata.es/quality#confidenceLevel> <http://www.w3.org/2000/01/rdf-schema#comment> "Property indicating the level of confidence of a result (especially a qual:Defect)" .
+<https://cogito.iot.linkeddata.es/quality#confidenceLevel> <http://www.w3.org/2000/01/rdf-schema#comment> "Property indicating the level of confidence of a result (especially a qual:QualityInformation)" .
 <https://cogito.iot.linkeddata.es/quality#confidenceLevel> <http://www.w3.org/2000/01/rdf-schema#label> "confidence level" .
 # 
 # https://cogito.iot.linkeddata.es/quality#deviceOrientation
@@ -310,7 +310,7 @@
 # https://cogito.iot.linkeddata.es/quality#InformationResource
 <https://cogito.iot.linkeddata.es/quality#InformationResource> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://cogito.iot.linkeddata.es/quality#InformationResource> <http://www.w3.org/2000/01/rdf-schema#comment> "Data regarding  the quality of an entity (especially a facility:Project or facility:Element) and that may have associated files in the platform" .
-<https://cogito.iot.linkeddata.es/quality#InformationResource> <http://www.w3.org/2000/01/rdf-schema#label> "Quality Information" .
+<https://cogito.iot.linkeddata.es/quality#InformationResource> <http://www.w3.org/2000/01/rdf-schema#label> "Information Resouce" .
 # 
 # https://cogito.iot.linkeddata.es/quality#Mesh
 <https://cogito.iot.linkeddata.es/quality#Mesh> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
